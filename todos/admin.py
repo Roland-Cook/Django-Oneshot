@@ -13,3 +13,4 @@ class TodoAdmin(admin.ModelAdmin):
         "name",
         "id"
     ]
+
