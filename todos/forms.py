@@ -27,3 +27,13 @@ class CreateTodoForm(ModelForm):
             "is_completed",
             "list"
         ]
+
+class EditTodoItem(ModelForm):
+    class Meta:
+        model = TodoItem
+        fields = [
+            "task",
+            "due_date",
+            "is_completed",
+            "list"
+        ]

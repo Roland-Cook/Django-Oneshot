@@ -10,7 +10,7 @@
     <main>
         <div>
             <h1>{{ todo_list_object.name }}</h1>
-            <p> <a href="{% url 'edit_todo_list' todo_list_object.id %}"> Edit</p></a>
+            <p> <a href="{% url 'edit_todo_list' todo_list_object.id %}"> Edit Task Name</p></a>
             <p> <a href="{% url 'delete_todo_list' todo_list_object.id %}"> Delete</p></a>
             
             <h2>Tasks</h2>
@@ -22,7 +22,7 @@
                 <tbody>
                     <tr>
                     {% for item in todo_list_object.items.all %}
-                    <td> <a href="{% url 'todo_list_list' %}">{{item.task}}  </td></a>
+                    <td> <a href="{% url 'update_todo_list' todo_list_object.id  %}">{{item.task}}  </td></a>
                     <td> {{ item.due_date}} </tr>
                     </tr>
                     {% endfor %}
