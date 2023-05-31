@@ -17,9 +17,12 @@
                     <th>Number of items</th>
                 </thead>
                 <tbody>
+                    <tr>
                     {% for item in todo_list %}
-                    <td> {{item.name}} </td>
+                    <td><a href="{% url 'todo_list_detail' item.id %}"> {{item.name}} </a> </td> 
+                    <td> {{ todo_list.items.task|length }} </td>
                     {% endfor %}
+                </tr>
                 </tbody>
             </table>
         </div>
