@@ -11,7 +11,7 @@
     <main>
         <div>
             <h1>My lists</h1>
-            <p> <a href='{% url "create_todo_list" %}'> Create Todo List </p> </a>
+            <p> <a href="{% url "create_todo_list" %}"> Create Todo List </p> </a>
             <table>
                 <thead>
                     <th>Name</th>
@@ -20,8 +20,8 @@
                 <tbody>
                     <tr>
                     {% for item in todo_list %}
-                    <td><a href="{% url 'todo_list_detail' item.id %}"> {{item.name}} </a> </td> 
-                    <td>{{item.id|length}}</td>
+                    <td><a href="{% url 'todo_list_detail' item.id %}">{{item.name}}</a> </td> 
+                    <td>{{ item.items.all|length }}</td>
                 </tr>
                 {% endfor %}
                 </tbody>

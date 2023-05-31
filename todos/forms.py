@@ -7,3 +7,11 @@ class TodoForm(ModelForm):
         fields=[
             "name"
         ]
+
+
+class EditTodoForm(ModelForm):
+    class Meta:
+        model = TodoList
+        fields = [
+            "name"
+        ]
