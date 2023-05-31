@@ -11,6 +11,7 @@
     <main>
         <div>
             <h1>My lists</h1>
+            <p> <a href='{% url "create_todo_list" %}'> Create Todo List </p> </a>
             <table>
                 <thead>
                     <th>Name</th>
@@ -20,9 +21,9 @@
                     <tr>
                     {% for item in todo_list %}
                     <td><a href="{% url 'todo_list_detail' item.id %}"> {{item.name}} </a> </td> 
-                    <td> {{ todo_list.items.task|length }} </td>
-                    {% endfor %}
+                    <td>{{item.id|length}}</td>
                 </tr>
+                {% endfor %}
                 </tbody>
             </table>
         </div>
