@@ -11,6 +11,8 @@
         <div>
             <h1>{{ todo_list_object.name }}</h1>
             <p> <a href="{% url 'edit_todo_list' todo_list_object.id %}"> Edit</p></a>
+            <p> <a href="{% url 'delete_todo_list' todo_list_object.id %}"> Delete</p></a>
+            
             <h2>Tasks</h2>
             <table>
                 <thead>

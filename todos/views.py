@@ -13,7 +13,7 @@ def todo_view(request):
 
 
 def show_todo_list(request, id):
-    todo_list_object = TodoList.objects.get(id=id)
+    todo_list_object = get_object_or_404(TodoList.objects, id=id)
     context = {
     "todo_list_object": todo_list_object
    }
@@ -48,3 +48,11 @@ def edit_todo_list(request,id):
         "post_form":form,
     }
     return render(request, "todos/todo_edit.html", context)
+
+def delete_todo_list(request, id):
+  list = get_object_or_404(TodoList.objects, id=id)
+  if request.method == "POST":
+    list.delete()
+    return redirect("todo_list_list")
+
+  return render(request, "todos/todo_delete.html")
